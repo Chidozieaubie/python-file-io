@@ -10,7 +10,7 @@ with open('origin.txt', 'r') as in_stream:
         for line in in_stream:
             line = line.strip()
             lineNumber += 1
-            wordobj = re.compile(r'(inheritance)', re.IGNORECASE)
+            wordobj = re.compile(r'(\w*herit\w*)', re.IGNORECASE)
             word_list = wordobj.findall(line)
             for word in word_list:
                 out_stream.write('{0}\t{1}\n'.format(lineNumber, word))
